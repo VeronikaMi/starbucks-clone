@@ -1,0 +1,5 @@
+@import url("../styles.css");
+
+.hero {
+  background-image: url("../assets/images/xl-hero-desktop_2021.png");
+}

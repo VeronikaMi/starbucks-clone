@@ -3,3 +3,9 @@
 .hero {
   background-image: url("../assets/images/xl-hero-desktop_2021.png");
 }
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("../assets/images/hero-mobile_2021.jpg");
+  }
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 const LINE_MOVE_STEP: number = 100;
 const IMG: string = '../assets/images/';
@@ -39,10 +39,25 @@ export class AppComponent {
       text: 'Take home a signature cup, a bag of coffee or your choice of select coffee accessories.',
     },
   ];
+  @ViewChild('nav') nav: ElementRef;
+  @ViewChild('rewards') rewards: ElementRef;
+
+  @HostListener('window:scroll', ['$event']) onscroll(event) {
+    let offsetHeight = this.nav.nativeElement.clientHeight;
+    if (window.innerWidth < 768) {
+      if (window.pageYOffset > offsetHeight) {
+        this.rewards.nativeElement.classList.add('fixed', 'top-0', 'w-full');
+      } else {
+        this.rewards.nativeElement.classList.remove('fixed', 'top-0', 'w-full');
+      }
+    } else if (this.rewards.nativeElement.classList.contains('fixed')) {
+      this.rewards.nativeElement.classList.remove('fixed', 'top-0', 'w-full');
+    }
+    console.log(window);
+  }
 
   public handleTabChange(listItemIndex: number) {
     this.leftMargin = (listItemIndex * LINE_MOVE_STEP).toString() + '%'; //forgot to add percentage
     this.currentTab = listItemIndex;
-    console.log(this.currentTab);
   }
 }

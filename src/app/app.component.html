@@ -1,5 +1,6 @@
-<header class="fixed top-0 w-full bg-white z-10">
-  <div class="flex justify-between items-center px-8 text-slate-800 h-24">
+<!-- HEADER -->
+<header class="w-full bg-white z-10 md:fixed md:top-0">
+  <div #nav class="flex justify-between items-center px-8 text-slate-800 h-24">
     <div class="left flex items-center gap-8">
       <img class="block h-12" src="../assets/images/logo.png" alt="logo" />
       <ul
@@ -91,10 +92,11 @@
       </button>
     </div>
   </div>
-  <div class="rewords h-14 flex items-center bg-dark-green">
+  <div #rewards class="rewords h-14 flex items-center bg-dark-green">
     <h2 class="font-bold ml-24 text-white">STARBUCKS® REWARDS</h2>
   </div>
 </header>
+<!-- HERO SECTION -->
 <div
   class="
     hero
@@ -103,9 +105,9 @@
     flex
     pl-8
     bg-no-repeat
-    md:bg-center md:bg-cover
-    bg-left-bottom bg-contain
-    mt-36
+    md:bg-center
+    bg-right-bottom bg-cover
+    md:mt-36
     justify-center
     items-start
     text-center
@@ -148,6 +150,7 @@
     </p>
   </div>
 </div>
+<!-- START TRIGGERS -->
 <section class="py-16 px-4">
   <div class="headings text-center">
     <h2 class="mb-2 text-2xl font-semibold md:text-3xl">
@@ -262,6 +265,7 @@
     </div>
   </div>
 </section>
+<!-- COFFEE TABS SECTION -->
 <section>
   <div class="heading bg-pastel-green drop-shadow-sm">
     <h2
@@ -287,7 +291,7 @@
         py-4
         relative
         md:w-8/12 md:mx-auto
-        lg:w-7/12
+        lg:w-5/12
       "
     >
       <!-- use ngFor on the element you want to repeat not on its parent! -->
@@ -348,3 +352,26 @@
     </div>
   </div>
 </section>
+<section class="px-4">
+  <h2
+    class="
+      mb-2
+      text-2xl
+      font-semibold
+      md:text-3xl
+      pt-14
+      text-center
+      mb-4
+      md:mb-12 md:pt-12
+      lg:pt-10
+    "
+  >
+    Endless Extras
+  </h2>
+  <p class="text-sm text-center">
+    Joining Starbucks® Rewards means unlocking access to exclusive benefits. Say
+    hello to easy ordering, tasty Rewards and—yes, free coffee.
+  </p>
+</section>
+
+<!-- trigger as component -->

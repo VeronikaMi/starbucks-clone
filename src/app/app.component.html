@@ -117,7 +117,7 @@
       FREE COFFEE <br />
       IS A TAP AWAY
     </h1>
-    <p class="mb-8 md:text-xl text-lg font-semibold">
+    <p class="mb-8 md:text-xl text-lg font-normal md:font-semibold">
       Join now to start earning Rewards.
     </p>
     <button
@@ -264,35 +264,87 @@
 </section>
 <section>
   <div class="heading bg-pastel-green drop-shadow-sm">
-    <h2 class="mb-2 text-2xl font-semibold md:text-3xl pt-14 text-center mb-4">
+    <h2
+      class="
+        mb-2
+        text-2xl
+        font-semibold
+        md:text-3xl
+        pt-14
+        text-center
+        mb-4
+        md:mb-12 md:pt-12
+        lg:pt-10
+      "
+    >
       Get your favorites for free
     </h2>
-    <ul class="flex gap-4 justify-around py-4">
-      <li class="text-xl font-semibold">
-        25<span class="text-yellow-600 text-sm">★</span>
+    <ul
+      class="
+        flex
+        gap-4
+        justify-around
+        py-4
+        relative
+        md:w-8/12 md:mx-auto
+        lg:w-7/12
+      "
+    >
+      <!-- use ngFor on the element you want to repeat not on its parent! -->
+      <li
+        *ngFor="let star of starList; let i = index"
+        (click)="handleTabChange(i)"
+        class="
+          text-xl
+          font-semibold
+          w-full
+          text-center
+          hover:cursor-pointer
+          md:text-2xl md:pb-4
+          lg:pb-2
+        "
+      >
+        {{ star }}<span class="text-yellow-600 text-sm">★</span>
       </li>
-      <li class="text-xl font-semibold">
-        50<span class="text-yellow-600 text-sm">★</span>
-      </li>
-      <li class="text-xl font-semibold">
-        150<span class="text-yellow-600 text-sm">★</span>
-      </li>
-      <li class="text-xl font-semibold">
-        200<span class="text-yellow-600 text-sm">★</span>
-      </li>
-      <li class="text-xl font-semibold">
-        400<span class="text-yellow-600 text-sm">★</span>
-      </li>
+      <div
+        class="
+          absolute
+          left-0
+          w-1/5
+          h-1
+          bg-active-green
+          bottom-0
+          transition
+          ease-out
+          duration-300
+        "
+        [ngStyle]="{ transform: 'translate(' + leftMargin + ')' }"
+      ></div>
     </ul>
   </div>
-  <div class="tabs h-max bg-light-green pb-8 px-4">
-    <div class="tab text-center">
-      <img src="../assets/images/coffee1.webp" alt="coffee cups" />
-      <h3 class="font-semibold text-xl my-4">Customize your drink</h3>
-      <p class="text-sm w-11/12 mx-auto">
-        Make your drink just right with an extra espresso shot, dairy substitute
-        or a dash of your favorite syrup.
-      </p>
+  <div class="tabs h-max bg-light-green pb-8 px-4 md:pb-4 lg:pt-6">
+    <div
+      class="
+        tab
+        text-center
+        pt-8
+        md:text-left md:flex md:items-center md:gap-8 md:pt-4
+        lg:w-8/12 lg:mx-auto lg:pt-6
+      "
+    >
+      <img
+        [src]="coffeeTabs[currentTab].img"
+        alt="coffee cups"
+        class="md:w-1/2"
+      />
+      <div class="md:w-1/2">
+        <h3 class="font-semibold text-xl my-4 md:text-2xl">
+          {{ coffeeTabs[currentTab].title }}
+        </h3>
+        <p class="text-sm w-11/12 mx-auto md:text-lg md:w-full">
+          {{ coffeeTabs[currentTab].text }}
+        </p>
+      </div>
     </div>
   </div>
 </section>

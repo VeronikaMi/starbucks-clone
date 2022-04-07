@@ -9,3 +9,12 @@
     background-image: url("../assets/images/hero-mobile_2021.jpg");
   }
 }
+
+.outer-circle {
+  &:hover {
+    .circle {
+      background: #eee;
+      transform: scale(5);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div
+  class="
+    tab
+    text-center
+    pt-8
+    md:text-left md:flex md:items-center md:gap-8 md:pt-4
+    lg:w-8/12 lg:mx-auto lg:pt-6
+  "
+>
+  <img [src]="coffeeTabs[currentTab].img" alt="coffee cups" class="md:w-1/2" />
+  <div class="md:w-1/2">
+    <h3 class="font-semibold text-xl my-4 md:text-2xl">
+      {{ coffeeTabs[currentTab].title }}
+    </h3>
+    <p class="text-sm w-11/12 mx-auto md:text-lg md:w-full">
+      {{ coffeeTabs[currentTab].text }}
+    </p>
+  </div>
+</div>
